@@ -14,12 +14,17 @@
 	  	<td>Nom original du film</td>
 			<td>Date de sortie</td>
 			<td>Réalisateur</td>
+			<td>Résumé (en anglais)</td>
 		</tr>
 	</thead>
 	<tbody>
 	<% @movies.each do |movie| %>
 	  <tr>
-      <td><img src="https://image.tmdb.org/t/p/w92<%=movie[:movie].poster_path%>"></td>
+			<% if movie[:movie].release_date == ""%>
+				<td>Bientôt l'affiche !</td>
+			<%else%>
+      	<td><img src="https://image.tmdb.org/t/p/w92<%=movie[:movie].poster_path%>"></td>
+			<%end%>
 		  <td><%= movie[:movie].title %></td>
 		  <td><%= movie[:movie].original_title  %></td>
       <% if movie[:movie].release_date == ""%>
@@ -28,6 +33,7 @@
         <td><%= movie[:movie].release_date %></td>
       <%end%>
 		  <td><%= movie[:director] %></td>
+			<td><%= movie[:movie].overview%>
 	  </tr>
   <% end %>
 
