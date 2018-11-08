@@ -12,8 +12,7 @@
       <td>Nom du film</td>
 	  	<td>Nom original du film</td>
 			<td>Date de sortie</td>
-			<td>Résumé</td>            
-			<td>Classé +18</td>
+			<td>Résumé</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,11 +22,6 @@
 		  <td><%= movie.original_title  %></td>
 		  <td><%= movie.release_date %></td>
 		  <td><%= movie.overview %></td>
-      <% if movie.adult%>
-		    <td>Oui</td>
-      <%else%>
-        <td>Non</td>
-      <%end%>
 	  </tr>
   <% end %>
 
