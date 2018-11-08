@@ -1,0 +1,21 @@
+<div class="container-fluid align-items-stretch bg-secondary">
+<div class= "text-light  d-flex align-content-end flex-wrap ">
+<div class="center jumbotron bg-secondary">  
+
+
+
+<h1>Salut, tu veux trouver le nom d'un film?</h1>
+
+
+<p>Entre son nom ici !</p>
+
+  <p id="error"><%= flash[:error] %></p>
+  <br/>
+  <%= form_for :anything, url: "/show", method: :get do |form| %>
+    <%= form.text_field :name %>
+    <%= form.submit value="Confirme ici!" %>
+  <% end %>
+
+</div>
+</div>
+</div>

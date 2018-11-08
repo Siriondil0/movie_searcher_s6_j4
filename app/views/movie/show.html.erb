@@ -1,0 +1,36 @@
+<div class="container-fluid align-items-stretch bg-secondary">
+<div class= "text-light  d-flex align-content-end flex-wrap ">
+<div class="center jumbotron bg-secondary">  
+
+  <%= link_to "Retour au choix du film par ici", '/', method: :get%>
+  <br/>
+  <h3> Ta recherche donne le résultat suivant : (les films sont classés par popularité)</h3>
+	<br/>
+  <table class="table">
+	<thead>
+	  <tr>
+      <td>Nom du film</td>
+	  	<td>Nom original du film</td>
+			<td>Date de sortie</td>
+			<td>Résumé</td>            
+			<td>Classé +18</td>
+		</tr>
+	</thead>
+	<tbody>
+	<% @movies.each do |movie| %>
+	  <tr>
+		  <td><%= movie.title %></td>
+		  <td><%= movie.original_title  %></td>
+		  <td><%= movie.release_date %></td>
+		  <td><%= movie.overview %></td>
+      <% if movie.adult%>
+		    <td>Oui</td>
+      <%else%>
+        <td>Non</td>
+      <%end%>
+	  </tr>
+  <% end %>
+
+</div>
+</div>
+</div>
