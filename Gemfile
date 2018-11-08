@@ -12,7 +12,7 @@ gem 'execjs'
 gem 'devise'
 gem 'nokogiri'
 gem 'rspec-rails'
-gem 'dotenv-rails' , groups: [:development, :test]
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'themoviedb'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
