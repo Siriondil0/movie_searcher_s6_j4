@@ -6,7 +6,7 @@ class MovieController < ApplicationController
 
   def show
     @name = params[:anything][:name]
-    @movies = Search_movie.new(@name)
+    @movies = Search_movie.new(@name).perform
     if @movies == []
       redirect_to root_path, :flash => { :error => "Pas de film contenant ton (tes) mot(s) clé(s), réessaye" }
     end

@@ -22,7 +22,11 @@
       <td><img src="https://image.tmdb.org/t/p/w92<%=movie[:movie].poster_path%>"></td>
 		  <td><%= movie[:movie].title %></td>
 		  <td><%= movie[:movie].original_title  %></td>
-		  <td><%= movie[:movie].release_date %></td>
+      <% if movie[:movie].release_date == ""%>
+        <td>À paraître</td>
+      <%else%>
+        <td><%= movie[:movie].release_date %></td>
+      <%end%>
 		  <td><%= movie[:director] %></td>
 	  </tr>
   <% end %>
