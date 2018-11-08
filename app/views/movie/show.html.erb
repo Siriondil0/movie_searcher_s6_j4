@@ -9,19 +9,21 @@
   <table class="table">
 	<thead>
 	  <tr>
+      <td>Affiche du film</td>
       <td>Nom du film</td>
 	  	<td>Nom original du film</td>
 			<td>Date de sortie</td>
-			<td>Résumé</td>
+			<td>Réalisateur</td>
 		</tr>
 	</thead>
 	<tbody>
 	<% @movies.each do |movie| %>
 	  <tr>
-		  <td><%= movie.title %></td>
-		  <td><%= movie.original_title  %></td>
-		  <td><%= movie.release_date %></td>
-		  <td><%= movie.overview %></td>
+      <td><img src="https://image.tmdb.org/t/p/w92<%=movie[:movie].poster_path%>"></td>
+		  <td><%= movie[:movie].title %></td>
+		  <td><%= movie[:movie].original_title  %></td>
+		  <td><%= movie[:movie].release_date %></td>
+		  <td><%= movie[:director] %></td>
 	  </tr>
   <% end %>
 
